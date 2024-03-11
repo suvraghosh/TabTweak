@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'standardfont';
+    src: url('/assests/fonts/KodeMono-VariableFont_wght.woff') format("woff");
+}
+
+@font-face {
+    font-family: 'uniquefont';
+    src: url('/assests/fonts/JosefinSans-VariableFont_wght.woff') format("woff");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --main-color: rgb(213, 87, 87);
+    color-scheme: dark;
+    font-size: 11.25px;
+    color: var(--main-color);
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    height: 100dvh;
+    width: 100dvw;
+    background: center / cover no-repeat url(/assests/images/bg.jpg);
+    position: relative;
+    text-align: center;
+    user-select: none;
+    font-family: 'standardfont', monospace;
+    overflow: hidden;
+    color: var(--main-color);
+}
+
+body::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 22, 22, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.navbar{
+    height: max-content;
+    color: color-mix(in lab, currentcolor, rgb(89,173,210) 50%);
+    background-color: rgb(27,27,27,0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav{
+    padding-inline: 3rem;
+    padding-block: 1.5rem;
+    font-size: 2rem;
+}
+
+#weather-wrapper{
+    font-size: 2rem;
+    color: color-mix(in lab, currentcolor, rgb(83,193,210) 50%);
+    width: fit-content;
+    position: absolute;
+    right: 2%;
+    background-color: rgba(27, 27, 27, 0.6);
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+main{
+    display: grid;
+    place-content: center;
+    height: 85vh;
+}
+
+#name{
+    outline: none;
+}
+
+#clock{
+    font-size: clamp(2rem, 30dvw, 20rem);
+    text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#greeting-msg{
+    font-family: 'uniquefont', system-ui;
+    font-size: clamp(1.2rem, 5dvw, 2.7rem);
+    letter-spacing: 0.3;
+    color: color-mix(in lab, var(--main-color), yellow 45%);
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px currentColor;
+}
+
+#meridiem{
+    font-size: 0.3em;
+}
+.vis-hid{
+    visibility: hidden;
+}
+
+#menu{
+    position: absolute;
+    z-index: 90;
+    font-size: 1.5rem;
+    display: none;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    width: max-content;
+    background-color: rgba(27, 27, 27, 0.6);
+}
+
+.menu-item{
+    padding-block: 1.5rem;
+    padding-inline: 3rem;
+    border-bottom: 1px solid rgb(146, 146, 146);
+    cursor: pointer;
+    text-align: left;
+}
+
+.menu-item:hover{
+    background-color: rgb(29, 37, 44);
+}
